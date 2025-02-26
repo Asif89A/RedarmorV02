@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    font-family: 'Orbitron', monospace;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: black;
+    color: #00ffcc;
+}
+
+/* Header */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    box-shadow: 0px 0px 10px #00ffcc;
+}
+
+/* Glitch Effect */
+.glitch {
+    font-size: 40px;
+    position: relative;
+    color: #00ffcc;
+    text-shadow: 2px 2px 8px #00ffcc;
+    animation: glitch 1s infinite alternate;
+}
+
+@keyframes glitch {
+    0% { transform: skewX(0deg); }
+    50% { transform: skewX(-10deg); }
+    100% { transform: skewX(10deg); }
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #00ffcc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff00ff;
+}
+
+/* Intro Section */
+.intro {
+    margin: 40px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+button {
+    background: #00ffcc;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff00ff;
+}
+
+/* Terminal Section */
+.terminal {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px #00ffcc;
+    margin: 40px auto;
+    width: 80%;
+    max-width: 600px;
+}
+
+.terminal-text {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#terminal-input {
+    width: 90%;
+    padding: 10px;
+    background: #000;
+    border: 1px solid #00ffcc;
+    color: #00ffcc;
+    font-size: 16px;
+}
