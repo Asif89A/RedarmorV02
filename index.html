@@ -1,46 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RedarmorV02 - Cybersecurity & Hacking</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <title>RedarmorV02 - Advanced Hacker Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Embedded CSS -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Orbitron', monospace;
+      background: black;
+      color: #00ffcc;
+      overflow: hidden; /* So the page doesn't scroll if canvas is large */
+    }
+
+    /* Canvas for Matrix Rain */
+    #matrixCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1; /* behind everything */
+      background: black;
+    }
+
+    /* Header Section with Glitch Title */
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      background: rgba(0, 0, 0, 0.8);
+      box-shadow: 0 0 10px #00ffcc;
+      position: relative;
+      z-index: 1;
+    }
+
+    .glitch {
+      font-size: 3rem;
+      color: #00ffcc;
+      text-shadow: 2px 2px 8px #00ffcc;
+      position: relative;
+      animation: glitch 1s infinite alternate;
+      cursor: default;
+      user-select: none;
+    }
+
+    @keyframes glitch {
+      0%   { transform: skewX(0deg); }
+      20%  { transform: skewX(-10deg) translate(5px, 0); }
+      40%  { transform: skewX(10deg)  translate(-5px, 0); }
+      60%  { transform: skewX(-10deg) translate(5px, 0); }
+      80%  { transform: skewX(10deg)  translate(-5px, 0); }
+      100% { transform: skewX(0deg); }
+    }
+
+    /* Navigation Bar */
+    nav {
+      margin-bottom: 20px;
+    }
+    nav ul {
+      list-style: none;
+      display: inline-block;
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #00ffcc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ff00ff;
+    }
+
+    /* Intro Section */
+    .intro {
+      margin: 40px auto;
+      max-width: 800px;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .intro button {
+      background: #00ffcc;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 20px;
+    }
+    .intro button:hover {
+      background: #ff00ff;
+    }
+
+    /* Terminal Section */
+    .terminal {
+      margin: 40px auto;
+      max-width: 600px;
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00ffcc;
+      position: relative;
+      z-index: 1;
+    }
+    .terminal h2 {
+      margin-bottom: 10px;
+    }
+    .terminal-text {
+      margin: 0 0 10px 0;
+      text-align: left;
+      white-space: pre-wrap;
+    }
+    #terminal-input {
+      width: 100%;
+      padding: 10px;
+      background: #000;
+      border: 1px solid #00ffcc;
+      color: #00ffcc;
+      font-size: 16px;
+      font-family: 'Orbitron', monospace;
+      outline: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 0 10px #00ffcc;
+      z-index: 1;
+    }
+  </style>
 </head>
+
 <body>
 
-    <header>
-        <h1 class="glitch" data-text="RedarmorV02">RedarmorV02</h1>
-        <p>Cybersecurity | Ethical Hacking | Penetration Testing</p>
-    </header>
+  <!-- Matrix Rain Canvas -->
+  <canvas id="matrixCanvas"></canvas>
 
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+  <!-- Header Section -->
+  <header>
+    <h1 class="glitch" data-text="RedarmorV02">RedarmorV02</h1>
+    <p>Cybersecurity | Ethical Hacking | Penetration Testing</p>
+  </header>
 
-    <section class="intro">
-        <h2>Welcome to the Dark Side of Cybersecurity</h2>
-        <p>We are an elite cybersecurity group focused on ethical hacking and security research.</p>
-        <button onclick="showMessage()">Join the Network</button>
-    </section>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <!-- Interactive Hacking Terminal -->
-    <section class="terminal">
-        <h2>Hacker Console</h2>
-        <div id="terminal">
-            <pre class="terminal-text">> Type 'help' for available commands</pre>
-            <input type="text" id="terminal-input" placeholder="Enter command">
-        </div>
-    </section>
+  <!-- Intro Section -->
+  <section class="intro" id="home">
+    <h2>Welcome to the Dark Side of Cybersecurity</h2>
+    <p>We are an elite cybersecurity group focused on ethical hacking and security research.</p>
+    <button onclick="showMessage()">Join the Network</button>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 RedarmorV02 | Secure the Future</p>
-    </footer>
+  <!-- Terminal Section -->
+  <section class="terminal">
+    <h2>Hacker Console</h2>
+    <pre class="terminal-text" id="terminal-output">> Type 'help' for available commands</pre>
+    <input type="text" id="terminal-input" placeholder="Enter command">
+  </section>
 
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 RedarmorV02 | Secure the Future</p>
+  </footer>
+
+  <!-- Inline JavaScript -->
+  <script>
+    /********************************************************
+     * 1) Show a simple alert when the user clicks the button
+     ********************************************************/
+    function showMessage() {
+      alert("Welcome to RedarmorV02! Stay anonymous, stay secure.");
+    }
+
+    /********************************************************
+     * 2) Interactive Terminal Logic
+     ********************************************************/
+    const terminalInput = document.getElementById("terminal-input");
+    const terminalOutput = document.getElementById("terminal-output");
+
+    terminalInput.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        const command = terminalInput.value.trim().toLowerCase();
+        terminalInput.value = "";
+
+        let response = "> Unknown command. Type 'help' for options.";
+        switch (command) {
+          case "help":
+            response = "> Available commands:\n   whoami\n   contact\n   projects\n   clear";
+            break;
+          case "whoami":
+            response = "> You are a visitor of RedarmorV02, an elite hacking group.";
+            break;
+          case "contact":
+            response = "> Reach us at: contact@redarmorv02.com";
+            break;
+          case "projects":
+            response = "> Check our GitHub for open-source security tools.";
+            break;
+          case "clear":
+            terminalOutput.textContent = "";
+            return; // skip the next line
+        }
+
+        terminalOutput.textContent = response;
+      }
+    });
+
+    /********************************************************
+     * 3) Matrix Rain Animation
+     ********************************************************/
+    const canvas = document.getElementById('matrixCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // full screen
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let matrixCols = Math.floor(canvas.width / 20);
+    const matrixDrops = [];
+    const matrixChars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    for (let i = 0; i < matrixCols; i++) {
+      matrixDrops[i] = 1;
+    }
+
+    function drawMatrix() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#00ffcc";
+      ctx.font = "16px 'Courier New', monospace";
+
+      for (let i = 0; i < matrixDrops.length; i++) {
+        let text = matrixChars.charAt(Math.floor(Math.random() * matrixChars.length));
+        ctx.fillText(text, i * 20, matrixDrops[i] * 20);
+
+        // reset drop
+        if (matrixDrops[i] * 20 > canvas.height && Math.random() > 0.975) {
+          matrixDrops[i] = 0;
+        }
+        matrixDrops[i]++;
+      }
+    }
+
+    setInterval(drawMatrix, 50);
+
+    // On window resize, recalc canvas
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      matrixCols = Math.floor(canvas.width / 20);
+      for (let i = 0; i < matrixCols; i++) {
+        matrixDrops[i] = 1;
+      }
+    });
+  </script>
 </body>
 </html>
