@@ -38,6 +38,7 @@ header {
   width: 100%;
   padding: 1rem 9%;
   background-color: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   display: flex;
   justify-content: space-between;
@@ -269,6 +270,7 @@ section {
   content: "Web Developer";
   color: #b74b4b;
   animation: words 20s infinite;
+  -webkit-animation: words 20s infinite;
 }
 
 .typing-text span::after {
@@ -280,6 +282,7 @@ section {
   border-left: 3px solid black;
   right: -8px;
   animation: cursor 0.6s infinite;
+  -webkit-animation: cursor 0.6s infinite;
 }
 
 @keyframes cursor {
@@ -288,7 +291,31 @@ section {
   }
 }
 
+@-webkit-keyframes cursor {
+  to {
+    border-left: 3px solid #b74b4b;
+  }
+}
+
 @keyframes words {
+  0%, 20% {
+    content: "Web Developer";
+  }
+  21%, 40% {
+    content: "Developer";
+  }
+  41%, 60% {
+    content: "Web Designer";
+  }
+  61%, 80% {
+    content: "Youtuber";
+  }
+  81%, 100% {
+    content: "Script Writer";
+  }
+}
+
+@-webkit-keyframes words {
   0%, 20% {
     content: "Web Developer";
   }
