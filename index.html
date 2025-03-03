@@ -26,12 +26,20 @@
     <a href="#home" class="logo" aria-label="Asif Home">Asif</a>
     <nav role="navigation" id="nav-menu">
       <a href="#home" class="active">Home</a>
-      <a href="#">Services</a>
-      <a href="#">Skills</a>
-      <a href="#">Education</a>
-      <a href="#">Experience</a>
+      <a href="#services">Services</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </nav>
+    <!-- Hamburger for mobile navigation -->
+    <div class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <!-- Dark/Light Mode Toggle -->
+    <button class="mode-toggle" id="mode-toggle" aria-label="Toggle Dark/Light Mode">
+      <i class="fa-solid fa-moon"></i>
+    </button>
   </header>
 
   <main role="main">
@@ -61,11 +69,35 @@
         <a href="#contact" class="btn">Hire me</a>
       </div>
     </section>
-    
+
+    <!-- Services Section -->
+    <section id="services" class="section services" aria-label="Services">
+      <h2>Services</h2>
+      <p>Placeholder for services offered. You can detail your web development, design, and content creation services here.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills" aria-label="Skills">
+      <h2>Skills</h2>
+      <p>Detail your skills in coding, design, UX/UI, and more.</p>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education" aria-label="Education">
+      <h2>Education</h2>
+      <p>Include your educational background and any certifications.</p>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience" aria-label="Experience">
+      <h2>Experience</h2>
+      <p>Highlight your work experience, projects, and achievements.</p>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="section contact" aria-label="Contact">
       <h2>Contact</h2>
-      <p>You can reach out to me on Instagram, Snapchat, or email me directly.</p>
+      <p>You can reach out to me on Instagram or Snapchat, or email me directly.</p>
       <div class="contact-links">
         <a href="https://www.instagram.com/asifinamdar999" target="_blank" aria-label="Instagram">
           <i class="fa-brands fa-instagram"></i> Instagram
@@ -78,7 +110,7 @@
         </a>
       </div>
       <!-- Simple Contact Form (Non-functional - integrate with your backend) -->
-      <form class="contact-form" action="#" method="post">
+      <form class="contact-form">
         <input type="text" placeholder="Your Name" aria-label="Your Name" required>
         <input type="email" placeholder="Your Email" aria-label="Your Email" required>
         <textarea placeholder="Your Message" aria-label="Your Message" required></textarea>
@@ -92,15 +124,19 @@
   </footer>
 
   <script>
-    // Toggle mobile navigation (if needed)
-    // (This simple version does not include a hamburger menu toggle.)
-    
-    // Dark/Light Mode Toggle (if previously implemented)
-    // Uncomment the below if you have a toggle button in your header.
-    /*
+    // Toggle mobile navigation
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburger.querySelector('i').classList.toggle('fa-xmark'); // Change icon on toggle
+    });
+
+    // Dark/Light Mode Toggle
     const modeToggle = document.getElementById('mode-toggle');
     modeToggle.addEventListener('click', () => {
       document.body.classList.toggle('light-mode');
+      // Switch icon based on mode
       const icon = modeToggle.querySelector('i');
       if (document.body.classList.contains('light-mode')) {
         icon.classList.replace('fa-moon', 'fa-sun');
@@ -108,7 +144,6 @@
         icon.classList.replace('fa-sun', 'fa-moon');
       }
     });
-    */
   </script>
 </body>
 </html>
