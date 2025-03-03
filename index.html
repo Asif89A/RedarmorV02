@@ -26,20 +26,12 @@
     <a href="#home" class="logo" aria-label="Asif Home">Asif</a>
     <nav role="navigation" id="nav-menu">
       <a href="#home" class="active">Home</a>
-      <a href="#services">Services</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
+      <a href="#">Services</a>
+      <a href="#">Skills</a>
+      <a href="#">Education</a>
+      <a href="#">Experience</a>
       <a href="#contact">Contact</a>
     </nav>
-    <!-- Hamburger for mobile navigation -->
-    <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-    <!-- Dark/Light Mode Toggle -->
-    <button class="mode-toggle" id="mode-toggle" aria-label="Toggle Dark/Light Mode">
-      <i class="fa-solid fa-moon"></i>
-    </button>
   </header>
 
   <main role="main">
@@ -69,31 +61,7 @@
         <a href="#contact" class="btn">Hire me</a>
       </div>
     </section>
-
-    <!-- Services Section -->
-    <section id="services" class="section services" aria-label="Services">
-      <h2>Services</h2>
-      <p>Here you can detail the services you offer in web development, design, and content creation.</p>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section skills" aria-label="Skills">
-      <h2>Skills</h2>
-      <p>Highlight your expertise in coding, design, UX/UI, and more.</p>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="section education" aria-label="Education">
-      <h2>Education</h2>
-      <p>Include your educational background and any certifications you hold.</p>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section experience" aria-label="Experience">
-      <h2>Experience</h2>
-      <p>Showcase your work experience, projects, and achievements.</p>
-    </section>
-
+    
     <!-- Contact Section -->
     <section id="contact" class="section contact" aria-label="Contact">
       <h2>Contact</h2>
@@ -124,21 +92,12 @@
   </footer>
 
   <script>
-    // Toggle mobile navigation
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      // Toggle icon between bars and x-mark
-      const icon = hamburger.querySelector('i');
-      if (navMenu.classList.contains('active')) {
-        icon.classList.replace('fa-bars', 'fa-xmark');
-      } else {
-        icon.classList.replace('fa-xmark', 'fa-bars');
-      }
-    });
-
-    // Dark/Light Mode Toggle
+    // Toggle mobile navigation (if needed)
+    // (This simple version does not include a hamburger menu toggle.)
+    
+    // Dark/Light Mode Toggle (if previously implemented)
+    // Uncomment the below if you have a toggle button in your header.
+    /*
     const modeToggle = document.getElementById('mode-toggle');
     modeToggle.addEventListener('click', () => {
       document.body.classList.toggle('light-mode');
@@ -149,6 +108,7 @@
         icon.classList.replace('fa-sun', 'fa-moon');
       }
     });
+    */
   </script>
 </body>
 </html>
