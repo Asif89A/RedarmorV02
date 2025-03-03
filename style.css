@@ -12,6 +12,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -29,32 +30,30 @@ body.light-mode {
   color: #333;
 }
 
-/* Header and Navigation */
+/* Header */
 header {
-  margin-top: 20px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: 1rem 9%;
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(5px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  transition: background-color 0.3s ease;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease;
 }
 
 body.light-mode header {
-  background-color: rgba(245,245,245,0.9);
+  background: rgba(245, 245, 245, 0.9);
 }
 
 .logo {
   font-size: 3rem;
   color: #b74b4b;
   font-weight: 800;
-  cursor: pointer;
   transition: transform 0.5s ease;
 }
 
@@ -62,11 +61,15 @@ body.light-mode header {
   transform: scale(1.1);
 }
 
+nav {
+  display: flex;
+  align-items: center;
+}
+
 nav a {
   font-size: 1.8rem;
   color: white;
-  margin-left: 4rem;
-  font-weight: 500;
+  margin-left: 3rem;
   transition: color 0.3s ease, border-bottom 0.3s ease;
   border-bottom: 3px solid transparent;
 }
@@ -81,30 +84,24 @@ nav a.active {
   border-bottom: 3px solid #b74b4b;
 }
 
-/* Hamburger menu for mobile */
-.hamburger {
+/* Hamburger Menu & Mode Toggle */
+.hamburger,
+.mode-toggle {
   display: none;
   font-size: 2.5rem;
-  color: white;
   cursor: pointer;
-}
-
-body.light-mode .hamburger {
-  color: #333;
-}
-
-/* Dark/Light Mode Toggle Button */
-.mode-toggle {
   background: none;
-  font-size: 2.2rem;
-  color: white;
-  cursor: pointer;
   border: none;
-  transition: color 0.3s ease;
-  margin-left: 1rem;
 }
 
-body.light-mode .mode-toggle {
+.mode-toggle {
+  margin-left: 1rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+body.light-mode .mode-toggle,
+body.light-mode .hamburger {
   color: #333;
 }
 
@@ -112,17 +109,17 @@ body.light-mode .mode-toggle {
 @media(max-width: 995px) {
   nav {
     position: absolute;
-    top: 0;
+    top: 100%;
     right: 0;
-    width: 40%;
+    width: 60%;
     background-color: #161616;
     border-left: 3px solid #b74b4b;
     border-bottom: 3px solid #b74b4b;
     border-bottom-left-radius: 2rem;
     padding: 2rem;
-    display: none;
     flex-direction: column;
-    z-index: 200;
+    align-items: flex-start;
+    display: none;
   }
   
   nav.active {
@@ -130,34 +127,24 @@ body.light-mode .mode-toggle {
   }
   
   nav a {
-    display: block;
-    font-size: 2rem;
     margin: 1.5rem 0;
+    font-size: 2rem;
   }
   
-  nav a:hover,
-  nav a.active {
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border-bottom: 0.5rem solid #b74b4b;
-  }
-  
-  .hamburger {
+  .hamburger, .mode-toggle {
     display: block;
   }
 }
 
 /* Main Section */
 main {
-  padding-top: 8rem; /* Account for fixed header */
+  padding-top: 8rem; /* Space for fixed header */
 }
 
 /* Sections */
 section {
   min-height: 100vh;
   padding: 5rem 9%;
-  display: flex;
-  align-items: center;
 }
 
 /* Home Section */
@@ -167,27 +154,6 @@ section {
   align-items: center;
   gap: 8rem;
   background-color: inherit;
-}
-
-.home .home-content h1 {
-  font-size: 6rem;
-  font-weight: 700;
-  line-height: 1.3;
-}
-
-.home .home-content h1 span {
-  color: #b74b4b;
-}
-
-.home-content h3 {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-}
-
-.home-content p {
-  font-size: 1.6rem;
-  margin-bottom: 2rem;
 }
 
 .home-img {
@@ -200,11 +166,32 @@ section {
   border-radius: 50%;
   box-shadow: 0 0 25px #b74b4b;
   cursor: pointer;
-  transition: transform 0.2s linear;
+  transition: transform 0.3s ease;
 }
 
 .home-img img:hover {
   transform: scale(1.05);
+}
+
+.home-content h1 {
+  font-size: 6rem;
+  font-weight: 700;
+}
+
+.home-content h1 span {
+  color: #b74b4b;
+}
+
+.home-content h3 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.home-content p {
+  font-size: 1.6rem;
+  max-width: 500px;
+  margin-bottom: 2rem;
 }
 
 /* Social Icons */
@@ -225,9 +212,9 @@ section {
 
 .social-icons a:hover {
   color: black;
-  transform: scale(1.3) translateY(-5px);
   background-color: #b74b4b;
   box-shadow: 0 0 25px #b74b4b;
+  transform: scale(1.2);
 }
 
 /* Button */
@@ -246,19 +233,17 @@ section {
 }
 
 .btn:hover {
-  transform: scale(1.03);
   background-color: #b74b4b;
   color: black;
   box-shadow: 0 0 25px #b74b4b;
+  transform: scale(1.1);
 }
 
 /* Typing Text Animation */
 .typing-text {
-  font-size: 3.4rem;
+  font-size: 34px;
   font-weight: 600;
   min-width: 280px;
-  margin-bottom: 2rem;
-  position: relative;
 }
 
 .typing-text span {
@@ -268,24 +253,7 @@ section {
 .typing-text span::before {
   content: "Web Developer";
   color: #b74b4b;
-  animation: words 20s infinite;
-}
-
-.typing-text span::after {
-  content: "";
-  background-color: black;
-  position: absolute;
-  width: calc(100% + 8px);
-  height: 100%;
-  border-left: 3px solid black;
-  right: -8px;
-  animation: cursor 0.6s infinite;
-}
-
-@keyframes cursor {
-  to {
-    border-left: 3px solid #b74b4b;
-  }
+  animation: words 12s infinite;
 }
 
 @keyframes words {
@@ -293,17 +261,79 @@ section {
     content: "Web Developer";
   }
   21%, 40% {
-    content: "Developer";
+    content: "Software Engineer";
   }
   41%, 60% {
-    content: "Web Designer";
+    content: "UI/UX Designer";
   }
   61%, 80% {
-    content: "Youtuber";
+    content: "Content Creator";
   }
   81%, 100% {
-    content: "Script Writer";
+    content: "Freelancer";
   }
+}
+
+/* Section Titles */
+.section h2 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #b74b4b;
+}
+
+/* Generic Section Styles */
+.section p {
+  font-size: 1.8rem;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+/* Contact Section */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.contact-links a {
+  font-size: 1.8rem;
+  color: #b74b4b;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+  color: #f5f5f5;
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 1rem;
+  font-size: 1.6rem;
+  border: 1px solid #b74b4b;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: inherit;
+  resize: vertical;
+}
+
+.contact-form button {
+  align-self: center;
 }
 
 /* Footer */
@@ -312,6 +342,7 @@ footer {
   padding: 2rem 0;
   background-color: #111;
   color: #888;
+  font-size: 1.4rem;
 }
 
 body.light-mode footer {
@@ -320,28 +351,17 @@ body.light-mode footer {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 1000px) {
-  .home {
-    gap: 4rem;
-  }
-}
-
-@media(max-width: 995px) {
+@media (max-width: 995px) {
   .home {
     flex-direction: column;
-    margin: 5rem 4rem;
+    text-align: center;
   }
   
-  .home .home-content h1 {
+  .home-content h1 {
     font-size: 5rem;
-  }
-  
-  .home-content h3 {
-    font-size: 2.5rem;
   }
   
   .home-img img {
     width: 70vw;
-    margin-top: 4rem;
   }
 }
