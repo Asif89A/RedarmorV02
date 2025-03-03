@@ -1,42 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Portfolio Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="description" content="ASIF's portfolio website showcasing skills, projects, and experience.">
+  <meta name="keywords" content="ASIF, Portfolio, Web Developer, Designer, Projects">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#b74b4b">
+  <!-- Open Graph -->
+  <meta property="og:title" content="ASIF | Portfolio">
+  <meta property="og:description" content="ASIF's portfolio website showcasing skills, projects, and experience.">
+  <meta property="og:image" content="main.jpg">
+  <meta property="og:type" content="website">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ASIF | Portfolio">
+  <meta name="twitter:description" content="ASIF's portfolio website showcasing skills, projects, and experience.">
+  <meta name="twitter:image" content="main.jpg">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>ASIF | Portfolio Website</title>
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">Alex</a>
+  <!-- Header (banner) -->
+  <header role="banner">
+    <a href="#" class="logo" aria-label="ASIF Home">ASIF</a>
+    <nav role="navigation" id="navbar">
+      <a href="#" class="active">Home</a>
+      <a href="#">Services</a>
+      <a href="#">Skills</a>
+      <a href="#">Education</a>
+      <a href="#">Experience</a>
+      <a href="#">Contact</a>
+    </nav>
+    <!-- Hamburger for mobile navigation -->
+    <div class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <!-- Dark/Light Mode Toggle -->
+    <button class="mode-toggle" id="mode-toggle" aria-label="Toggle Dark/Light Mode">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </header>
 
-        <nav>
-            <a href="#" class="active"> Home</a>
-            <a href="#" >Services</a>
-            <a href="#" >Skills</a>
-            <a href="#" >Education</a>
-            <a href="#" >Experience</a>
-            <a href="#" >Contact</a>
-        </nav>
-    </header>
-    <section class="home">
-        <div class="home-img">
-            <img src="main.jpg" alt="">
+  <!-- Main content -->
+  <main role="main">
+    <section class="home" aria-label="Home Section">
+      <div class="home-img">
+        <!-- Using lazy loading for better performance -->
+        <img src="main.jpg" alt="ASIF Portrait" loading="lazy">
+      </div>
+      <div class="home-content">
+        <h1>Hi, I'm <span>ASIF</span></h1>
+        <h3 class="typing-text"><span></span></h3>
+        <p>
+          Welcome to my portfolio! I am passionate about crafting innovative web solutions, designing beautiful interfaces, and writing impactful code. Explore my site to learn more about my services, skills, education, and experience.
+        </p>
+        <div class="social-icons" aria-label="Social Media Links">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
         </div>
-        <div class="home-content">
-            <h1>Hi, It's <span>Alex</span></h1>
-            <h3 class="typing-text">I'm a <span></span></h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus labore dolores esse. Odit similique doloribus tenetur doloremque, sunt commodi in ipsa repudiandae debitis deleniti blanditiis quibusdam quaerat neque asperiores ea.</p>
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-            <a href="#" class="btn">Hire me</a>
-        </div>
+        <a href="#" class="btn">Hire me</a>
+      </div>
     </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p>&copy; 2025 ASIF. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Toggle mobile navigation
+    const hamburger = document.getElementById('hamburger');
+    const navbar = document.getElementById('navbar');
+    hamburger.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+
+    // Dark/Light Mode Toggle
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      // Switch icon based on mode
+      const icon = modeToggle.querySelector('i');
+      if (document.body.classList.contains('light-mode')) {
+        icon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        icon.classList.replace('fa-sun', 'fa-moon');
+      }
+    });
+  </script>
 </body>
 </html>
