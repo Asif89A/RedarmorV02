@@ -1,114 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
-  <meta charset="UTF-8" />
-  <title>RedarmorV02 - Elite Cybersecurity</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Link to CSS -->
-  <link rel="stylesheet" href="styles.css">
-  <!-- Link to JS (defer so it loads after HTML) -->
-  <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Website</title>
 </head>
 <body>
+    <header>
+        <a href="#" class="logo">Alex</a>
 
-  <!-- Matrix Rain Background -->
-  <canvas id="matrix-canvas"></canvas>
-
-  <!-- Navigation (Sticky) -->
-  <nav id="main-nav">
-    <div class="nav-container">
-      <div class="logo">RedarmorV02</div>
-      <ul class="nav-links">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <header id="hero">
-    <div class="hero-content">
-      <h1 class="glitch" data-text="RedarmorV02">RedarmorV02</h1>
-      <h2 id="typed-text"></h2> <!-- Will be typed by JS -->
-      <p>Leading the way in Ethical Hacking & Cybersecurity</p>
-      <a href="#about" class="btn-cta">Explore</a>
-    </div>
-  </header>
-
-  <!-- About Section -->
-  <section id="about">
-    <div class="section-content">
-      <h2>About Us</h2>
-      <p>
-        RedarmorV02 is a cutting-edge cybersecurity group specializing in ethical hacking, penetration testing, and research. 
-        Our mission is to expose vulnerabilities before malicious actors can exploit them. With a global network of experts, 
-        we deliver top-tier security solutions to clients worldwide.
-      </p>
-      <p>
-        Our approach combines technical expertise, innovative tools, and continuous learning. We believe in knowledge sharing 
-        and regularly contribute to open-source projects aimed at strengthening cybersecurity standards.
-      </p>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <div class="section-content">
-      <h2>Projects & Tools</h2>
-      <div class="projects-grid">
-        <!-- Card 1 -->
-        <div class="project-card">
-          <div class="project-card-content">
-            <h3>Vuln Scanner</h3>
-            <p>A powerful vulnerability scanner for web applications, detecting common security flaws and misconfigurations.</p>
-          </div>
+        <nav>
+            <a href="#" class="active"> Home</a>
+            <a href="#" >Services</a>
+            <a href="#" >Skills</a>
+            <a href="#" >Education</a>
+            <a href="#" >Experience</a>
+            <a href="#" >Contact</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="main.jpg" alt="">
         </div>
-        <!-- Card 2 -->
-        <div class="project-card">
-          <div class="project-card-content">
-            <h3>Crypto Analyzer</h3>
-            <p>Analyzes encryption methods for weaknesses, helping organizations maintain data integrity and compliance.</p>
-          </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>Alex</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus labore dolores esse. Odit similique doloribus tenetur doloremque, sunt commodi in ipsa repudiandae debitis deleniti blanditiis quibusdam quaerat neque asperiores ea.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <a href="#" class="btn">Hire me</a>
         </div>
-        <!-- Card 3 -->
-        <div class="project-card">
-          <div class="project-card-content">
-            <h3>RedArmor Terminal</h3>
-            <p>An interactive hacking console that simulates real-world attack vectors and defense strategies.</p>
-          </div>
-        </div>
-        <!-- Card 4 -->
-        <div class="project-card">
-          <div class="project-card-content">
-            <h3>Secure Chat</h3>
-            <p>End-to-end encrypted messaging platform ensuring confidential communication for security-conscious teams.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="section-content">
-      <h2>Contact Us</h2>
-      <p>Have a project or question? Reach out to us below.</p>
-      <form>
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Email Address" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn-cta">Send Message</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 RedarmorV02 - Secure the Future</p>
-  </footer>
-
+    </section>
 </body>
 </html>
