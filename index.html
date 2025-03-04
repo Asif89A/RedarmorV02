@@ -1,67 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Basic Meta Tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ASIF's Portfolio - Web Developer, Designer, and Content Creator">
-    <meta name="keywords" content="ASIF, Portfolio, Web Developer, Designer, Content Creator">
-    <meta name="author" content="ASIF">
+  <!-- Basic Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ASIF's Portfolio - Web Developer, Designer, and Content Creator">
+  <meta name="keywords" content="ASIF, Portfolio, Web Developer, Designer, Content Creator">
+  <meta name="author" content="ASIF">
 
-    <!-- Open Graph Meta Tags (For Social Media Preview) -->
-    <meta property="og:title" content="ASIF | Portfolio">
-    <meta property="og:description" content="Explore my portfolio to see my work in web development, design, and content creation.">
-    <meta property="og:image" content="main.jpg">
-    <meta property="og:url" content="https://yourwebsite.com">
-    <meta property="og:type" content="website">
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="ASIF | Portfolio">
+  <meta property="og:description" content="Explore my portfolio to see my work in web development, design, and content creation.">
+  <meta property="og:image" content="main.jpg">
+  <meta property="og:url" content="https://yourwebsite.com">
+  <meta property="og:type" content="website">
 
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ASIF | Portfolio">
-    <meta name="twitter:description" content="Explore my portfolio to see my work in web development, design, and content creation.">
-    <meta name="twitter:image" content="main.jpg">
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ASIF | Portfolio">
+  <meta name="twitter:description" content="Explore my portfolio to see my work in web development, design, and content creation.">
+  <meta name="twitter:image" content="main.jpg">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
+  <!-- Mobile Web App & Browser Theme Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0d0d0d">
+  <meta name="msapplication-TileColor" content="#0d0d0d">
+  <meta name="msapplication-navbutton-color" content="#0d0d0d">
 
-    <!-- Page Title -->
-    <title>ASIF | Portfolio</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
 
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <!-- Link to CSS -->
-    <link rel="stylesheet" href="style.css">
+  <!-- Page Title -->
+  <title>ASIF | Portfolio</title>
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">ASIF</a>
-        <nav>
-            <a href="#" class="active">Home</a>
-            <a href="#">Services</a>
-            <a href="#">Skills</a>
-            <a href="#">Education</a>
-            <a href="#">Experience</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+  <header id="header">
+    <a href="#" class="logo">ASIF</a>
+    <nav>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <section class="home">
-        <div class="home-img">
-            <img src="main.jpg" alt="ASIF's Profile Picture">
+  <!-- Home Section -->
+  <section class="home" id="home">
+    <div class="home-img">
+      <img src="main.jpg" alt="ASIF's Profile Picture">
+    </div>
+    <div class="home-content">
+      <h1>Hi, I'm <span>ASIF</span></h1>
+      <h3 class="typing-text">I'm a <span></span></h3>
+      <p>I am a passionate web developer and designer with a knack for creating modern, interactive websites. Explore my work and let’s create something amazing together!</p>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <a href="#contact" class="btn">Hire me</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="content">
+      <h2>About Me</h2>
+      <p>
+        I am a creative web developer and designer with experience in building responsive, user-friendly websites and applications. I love experimenting with new technologies and pushing creative boundaries.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="content">
+      <h2>My Services</h2>
+      <div class="cards">
+        <div class="card">
+          <i class="fa-solid fa-code"></i>
+          <h3>Web Development</h3>
+          <p>Building responsive and interactive websites using the latest technologies.</p>
         </div>
-        <div class="home-content">
-            <h1>Hi, It's <span>ASIF</span></h1>
-            <h3 class="typing-text">I'm a <span></span></h3>
-            <p>I am a passionate web developer and designer with experience in creating modern, responsive websites. I also create engaging content on various platforms.</p>
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-            <a href="#" class="btn">Hire me</a>
+        <div class="card">
+          <i class="fa-solid fa-paint-brush"></i>
+          <h3>UI/UX Design</h3>
+          <p>Designing user-centric interfaces with a focus on simplicity and usability.</p>
         </div>
-    </section>
+        <div class="card">
+          <i class="fa-solid fa-video"></i>
+          <h3>Content Creation</h3>
+          <p>Creating engaging content across multiple digital platforms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio" id="portfolio">
+    <div class="content">
+      <h2>Portfolio</h2>
+      <p>Take a look at some of my latest projects and designs.</p>
+      <div class="portfolio-items">
+        <div class="portfolio-item">
+          <img src="main.jpg" alt="Project 1">
+          <div class="overlay">
+            <h3>Project 1</h3>
+            <p>Brief description</p>
+          </div>
+        </div>
+        <!-- Additional portfolio items can be added here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="content">
+      <h2>Contact Me</h2>
+      <p>Have a project in mind or want to collaborate? Get in touch!</p>
+      <form action="#" method="post">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Back to Top Button -->
+  <a href="#header" class="back-to-top"><i class="fa-solid fa-arrow-up"></i></a>
+
+  <!-- Smooth Scroll Script -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
