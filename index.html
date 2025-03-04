@@ -1,72 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ASIF | Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Website</title>
 </head>
 <body>
-  <header>
-    <a href="#" class="logo">ASIF</a>
-    <nav>
-      <a href="#" class="active">Home</a>
-      <a href="#">Services</a>
-      <a href="#">Skills</a>
-      <a href="#">Education</a>
-      <a href="#">Experience</a>
-      <a href="#">Contact</a>
-    </nav>
-    <!-- Mobile Hamburger Icon -->
-    <div class="hamburger" aria-label="Toggle Navigation">
-      <i class="fa-solid fa-bars"></i>
-    </div>
-    <!-- Dark/Light Mode Toggle -->
-    <button class="mode-toggle" aria-label="Toggle Dark/Light Mode">
-      <i class="fa-solid fa-moon"></i>
-    </button>
-  </header>
-  
-  <section class="home">
-    <div class="home-img">
-      <img src="main.jpg" alt="ASIF Portrait">
-    </div>
-    <div class="home-content">
-      <h1>Hi, I'm <span>ASIF</span></h1>
-      <h3 class="typing-text">I'm a <span></span></h3>
-      <p>
-        Welcome to my portfolio! I am passionate about crafting innovative web solutions, designing beautiful interfaces, and writing impactful code. Explore my site to learn more about my services, skills, education, and experience.
-      </p>
-      <div class="social-icons">
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="#"><i class="fa-brands fa-github"></i></a>
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-      </div>
-      <a href="#" class="btn">Hire me</a>
-    </div>
-  </section>
-  
-  <script>
-    // Toggle Mobile Navigation
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('nav');
-    hamburger.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
+    <header>
+        <a href="#" class="logo">ASIF</a>
 
-    // Dark/Light Mode Toggle
-    const modeToggle = document.querySelector('.mode-toggle');
-    modeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-      const icon = modeToggle.querySelector('i');
-      if (document.body.classList.contains('light-mode')) {
-        icon.classList.replace('fa-moon', 'fa-sun');
-      } else {
-        icon.classList.replace('fa-sun', 'fa-moon');
-      }
-    });
-  </script>
+        <nav>
+            <a href="#" class="active"> Home</a>
+            <a href="#" >Services</a>
+            <a href="#" >Skills</a>
+            <a href="#" >Education</a>
+            <a href="#" >Experience</a>
+            <a href="#" >Contact</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="main.jpg" alt="">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>ASIF</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus labore dolores esse. Odit similique doloribus tenetur doloremque, sunt commodi in ipsa repudiandae debitis deleniti blanditiis quibusdam quaerat neque asperiores ea.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <a href="#" class="btn">Hire me</a>
+        </div>
+    </section>
 </body>
 </html>
